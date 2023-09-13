@@ -5,7 +5,7 @@ import CityList from "./city-list";
 function App() {
   return (
     <div className="App">
-      <CityList />
+      <CityList city="Berlin" />
     </div>
   );
 }
