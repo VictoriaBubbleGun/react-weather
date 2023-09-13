@@ -19,6 +19,8 @@ export default function CityList(props) {
       humidity: response.data.temperature.humidity,
       wind: Math.round(response.data.wind.speed),
       country: response.data.country,
+      icon_url: response.data.condition.icon_url,
+      icon: response.data.condition.icon,
     });
   }
 
@@ -39,7 +41,7 @@ export default function CityList(props) {
 
   if (weatherData.ready) {
     return (
-      <div className="container m-5 shadow p-3 mb-5 bg-body-tertiary rounded w-auto">
+      <div className="container m-5 shadow-lg p-3 mb-5 bg-body-tertiary rounded w-auto">
         <div className="row">
           <div className="col-md-6 text-center mt-3">
             <h1 className="fs-2 pe-3 d-inline ">
@@ -76,8 +78,8 @@ export default function CityList(props) {
             </form>
             <img
               className="img-fluid w-25 mx-auto d-block"
-              src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-              alt="Mostly Cloudy"
+              src={weatherData.icon_url}
+              alt={weatherData.icon}
             />
           </div>
         </div>
