@@ -20,7 +20,7 @@ export default function Temperature(props) {
         {props.data}
         °C |
         <a
-          href=""
+          href="."
           className="text-decoration-none link"
           onClick={showFahrenheit}
         >
@@ -33,7 +33,7 @@ export default function Temperature(props) {
     return (
       <h2 className=" d-inline ps-2">
         {Math.round(fahrenheit)}
-        <a href="" className="text-decoration-none link" onClick={showCelsius}>
+        <a href="." className="text-decoration-none link" onClick={showCelsius}>
           °C
         </a>
         | °F
