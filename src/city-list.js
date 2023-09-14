@@ -44,16 +44,18 @@ export default function CityList(props) {
   if (weatherData.ready) {
     return (
       <div className=" d-flex justify-content-center">
-        <div className="container w-75 m-5 shadow-lg p-3 mb-5 bg-danger-subtle rounded">
+        <div className="container w-75 m-5 shadow-lg p-3 mb-5  bg-danger bg-opacity-25 rounded">
           <div className="row">
             <div className="col-md-6 text-center mt-3">
               <h1 className="fs-2 pe-3 d-inline ">
                 {weatherData.city}, {weatherData.country}
               </h1>
-              <div className="row justifiy-content-evenly">
-                <Temperature data={weatherData.temperature} />
+              <div className="row d-flex justifiy-content-center ">
+                <div className="col-md-6  mt-5 ">
+                  <Temperature data={weatherData.temperature} />
+                </div>
                 <div className="col-md-6  mt-3">
-                  <ul className="text-secondary">
+                  <ul className="text-danger-emphasis">
                     <li>
                       <FormattedDate date={weatherData.date} />
                     </li>
@@ -75,7 +77,11 @@ export default function CityList(props) {
                   autoFocus="on"
                   onChange={handleCityChange}
                 />
-                <input type="submit" className="btn btn-primary" />
+                <input
+                  type="submit"
+                  className="btn danger-emphasis"
+                  value="Search"
+                />
               </form>
               <img
                 className="img-fluid w-25 mx-auto d-block"

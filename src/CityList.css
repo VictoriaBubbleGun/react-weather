@@ -9,3 +9,10 @@ form {
 li {
   list-style: none;
 }
+
+.link {
+  color: #773c49;
+}
+.danger-emphasis {
+  background-color: #773c49;
+}
