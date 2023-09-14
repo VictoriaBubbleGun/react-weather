@@ -84,7 +84,7 @@ export default function CityList(props) {
                 />
               </form>
               <img
-                className="img-fluid w-25 mx-auto d-block"
+                className="img-fluid w-50 mx-auto d-block icon"
                 src={weatherData.icon_url}
                 alt={weatherData.icon}
               />

@@ -16,3 +16,6 @@ li {
 .danger-emphasis {
   background-color: #773c49;
 }
+.icon {
+  max-width: 100px;
+}
