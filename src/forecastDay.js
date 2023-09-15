@@ -7,7 +7,7 @@ export default function ForecastDay(props) {
     temperatureMin: 0,
     icon: "",
     condition: "",
-    date: null, // Initialize date as null
+    date: null,
   });
 
   useEffect(() => {
@@ -17,12 +17,12 @@ export default function ForecastDay(props) {
       temperatureMin: Math.round(props.data.temperature.minimum),
       icon: props.data.condition.icon_url,
       condition: props.data.condition.icon,
-      date, // Set date here
+      date,
     });
   }, [props.data]);
 
   const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-  const day = dailyData.date ? days[dailyData.date.getDay()] : ""; // Check if date is defined
+  const day = dailyData.date ? days[dailyData.date.getDay()] : "";
 
   return (
     <div className="col text-center">

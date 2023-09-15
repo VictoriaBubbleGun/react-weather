@@ -10,7 +10,6 @@ export default function Forecast(props) {
   function handleResponse(response) {
     setLoaded(true);
     setForecastData(response.data.daily);
-    console.log(response);
   }
 
   function forecastApiCall() {
