@@ -9,12 +9,7 @@ export default function Forecast(props) {
 
   function handleResponse(response) {
     setLoaded(true);
-    setForecastData({
-      temperatureMax: Math.round(response.data.daily[0].temperature.maximum),
-      temperatureMin: Math.round(response.data.daily[0].temperature.minimum),
-      icon: response.data.daily[0].condition.icon_url,
-      condition: response.data.daily[0].condition.icon,
-    });
+    setForecastData(response.data.daily);
     console.log(response);
   }
 
@@ -25,7 +20,14 @@ export default function Forecast(props) {
   }
 
   if (loaded) {
-    return <ForecastDay data={forecastData} />;
+    return (
+      <div className="WeatherForecast">
+        <div className="row">
+          <ForecastDay data={forecastData[0]} />
+          <ForecastDay data={forecastData[1]} />
+        </div>
+      </div>
+    );
   } else {
     forecastApiCall();
     return <Loader />;
