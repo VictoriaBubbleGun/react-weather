@@ -5,7 +5,20 @@ import CityList from "./city-list";
 function App() {
   return (
     <div className="App">
-      <CityList city="Berlin" />
+      <div className="container">
+        <CityList city="Berlin" />
+      </div>
+      <div className="row">
+        <footer className="text-center text-danger-emphasis">
+          This Project was coded by Jennyfer Müller and is Open-sourced on{" "}
+          <a
+            className="text-decoration-none text-dark"
+            href="https://github.com/VictoriaBubbleGun/react-weather"
+          >
+            Github
+          </a>
+        </footer>
+      </div>
     </div>
   );
 }

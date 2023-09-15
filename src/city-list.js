@@ -3,8 +3,9 @@ import "bootstrap/dist/css/bootstrap.css";
 import axios from "axios";
 import FormattedDate from "./FormattedDate";
 import "./CityList.css";
-import { ColorRing } from "react-loader-spinner";
 import Temperature from "./temperture";
+import Forecast from "./Forecast";
+import Loader from "./loader";
 
 export default function CityList(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -43,7 +44,7 @@ export default function CityList(props) {
 
   if (weatherData.ready) {
     return (
-      <div className=" d-flex justify-content-center">
+      <div className="d-flex justify-content-center">
         <div className="container w-75 m-5 shadow-lg p-3 mb-5  bg-danger bg-opacity-25 rounded">
           <div className="row">
             <div className="col-md-6 text-center mt-3">
@@ -90,24 +91,14 @@ export default function CityList(props) {
               />
             </div>
           </div>
-        </div>
+          <div className="row">
+            <Forecast city={weatherData.city} />
+          </div>
+        </div>{" "}
       </div>
     );
   } else {
     search();
-    return (
-      <div className="container text-center mt-5">
-        <ColorRing
-          className="img-fluid"
-          visible={true}
-          height="300"
-          width="300"
-          ariaLabel="blocks-loading"
-          wrapperStyle={{}}
-          wrapperClass="blocks-wrapper"
-          colors={["#e15b64", "#f47e60", "#f8b26a", "#abbd81", "#849b87"]}
-        />
-      </div>
-    );
+    return <Loader />;
   }
 }
