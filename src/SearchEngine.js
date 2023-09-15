@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import axios from "axios";
-import FormattedDate from "./FormattedDate";
-import "./CityList.css";
-import Temperature from "./temperture";
+import "./SearchEngine.css";
 import Forecast from "./Forecast";
 import Loader from "./loader";
+import CurrentWeather from "./currentWeather";
 
-export default function CityList(props) {
+export default function SearchEngine(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.city);
 
@@ -47,28 +46,7 @@ export default function CityList(props) {
       <div className="d-flex justify-content-center">
         <div className="container w-75 m-5 shadow-lg p-3 mb-5  bg-danger bg-opacity-25 rounded">
           <div className="row">
-            <div className="col-md-6 text-center mt-3">
-              <h1 className="fs-2 pe-3 d-inline ">
-                {weatherData.city}, {weatherData.country}
-              </h1>
-              <div className="row d-flex justifiy-content-center ">
-                <div className="col-md-6  mt-5 ">
-                  <Temperature data={weatherData.temperature} />
-                </div>
-                <div className="col-md-6  mt-3">
-                  <ul className="text-danger-emphasis">
-                    <li>
-                      <FormattedDate date={weatherData.date} />
-                    </li>
-                    <li className="text-capitalize">
-                      {weatherData.description}
-                    </li>
-                    <li>Humidity: {weatherData.humidity}% </li>
-                    <li>Wind: {weatherData.wind}km/h </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+            <CurrentWeather data={weatherData} />
             <div className="col-md-6">
               <form className="form" onSubmit={handleSubmit}>
                 <input

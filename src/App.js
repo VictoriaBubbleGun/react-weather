@@ -1,12 +1,12 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
-import CityList from "./city-list";
+import SearchEngine from "./SearchEngine";
 function App() {
   return (
     <div className="App">
       <div className="container">
-        <CityList city="Berlin" />
+        <SearchEngine city="Berlin" />
       </div>
       <div className="row">
         <footer className="text-center text-danger-emphasis">
