@@ -25,7 +25,7 @@ export default function ForecastDay(props) {
   const day = dailyData.date ? days[dailyData.date.getDay()] : "";
 
   return (
-    <div className="col text-center">
+    <div className=" text-center">
       <div className="WeatherForecast-day">{day}</div>
       <div className="WeatherForecast-icon">
         <img src={dailyData.icon} alt={dailyData.condition} />

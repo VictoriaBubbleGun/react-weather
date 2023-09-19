@@ -20,10 +20,18 @@ export default function Forecast(props) {
 
   if (loaded) {
     return (
-      <div className="WeatherForecast">
+      <div className="WeatherForecast mt-5">
         <div className="row">
-          <ForecastDay data={forecastData[0]} />
-          <ForecastDay data={forecastData[1]} />
+          {forecastData.map(function (forecastData, index) {
+            if (index < 6 && index > 0)
+              return (
+                <div className="col" key={index}>
+                  {" "}
+                  <ForecastDay data={forecastData} />{" "}
+                </div>
+              );
+            else return null;
+          })}
         </div>
       </div>
     );
