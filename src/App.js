@@ -8,8 +8,8 @@ function App() {
       <div className="container">
         <SearchEngine city="Berlin" />
       </div>
-      <div className="row">
-        <footer className="text-center text-danger-emphasis">
+      <div className="row ">
+        <footer className="text-center text-danger-emphasis mb-3">
           This Project was coded by Jennyfer Müller and is Open-sourced on{" "}
           <a
             className="text-decoration-none text-dark"

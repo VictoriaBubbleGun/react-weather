@@ -24,10 +24,10 @@ export default function Forecast(props) {
 
   if (loaded) {
     return (
-      <div className="WeatherForecast mt-5">
+      <div className="WeatherForecast mt-2">
         <div className="row">
           {forecastData.map(function (forecastData, index) {
-            if (index < 7 && index > 0)
+            if (index < 5 && index > 0)
               return (
                 <div className="col" key={index}>
                   {" "}

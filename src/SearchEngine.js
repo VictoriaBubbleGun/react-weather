@@ -45,24 +45,31 @@ export default function SearchEngine(props) {
       <div className="d-flex justify-content-center">
         <div className="container w-75 m-5 shadow-lg p-3 mb-5  bg-danger bg-opacity-25 rounded">
           <div className="row">
-            <CurrentWeather data={weatherData} />
+            <CurrentWeather
+              data={weatherData}
+              icon={weatherData.icon_url}
+              icon_
+              alt={weatherData.icon}
+            />
             <div className="col-md-6">
-              <form className="form" onSubmit={handleSubmit}>
+              <form className="form" onSubmit={handleSubmit} name="search">
                 <input
                   type="search"
                   className="form-control search"
                   placeholder="Enter your City"
                   autoFocus="on"
                   onChange={handleCityChange}
+                  name="city"
                 />
                 <input
                   type="submit"
                   className="btn danger-emphasis"
                   value="Search"
+                  name="submit"
                 />
               </form>
               <img
-                className="img-fluid w-50 mx-auto d-block icon"
+                className="img-fluid w-50 mx-auto d-block icon d-none d-md-block"
                 src={weatherData.icon_url}
                 alt={weatherData.icon}
               />
