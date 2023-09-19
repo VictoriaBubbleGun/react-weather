@@ -21,12 +21,20 @@ export default function ForecastDay(props) {
     });
   }, [props.data]);
 
-  const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
   const day = dailyData.date ? days[dailyData.date.getDay()] : "";
 
   return (
     <div className=" text-center">
-      <div className="WeatherForecast-day">{day}</div>
+      <div className="WeatherForecast-day text-danger-emphasis">{day}</div>
       <div className="WeatherForecast-icon">
         <img src={dailyData.icon} alt={dailyData.condition} />
       </div>
